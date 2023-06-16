@@ -1,0 +1,58 @@
+
+<app-navbar></app-navbar>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Credit</th>
+        <th>Debit</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of userTransactions">
+        <td [class.green]="row.credit" [class.red]="!row.credit">
+          {{ row.date }}
+        </td>
+        <td class="credit">{{ row.credit || '' }}</td>
+        <td class="debit">{{ row.debit || '' }}</td>
+        <td>₹{{ row.balance }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="button-group">
+    <button
+      class="btn"
+      (click)="showWithdrawForm = !showWithdrawForm"
+      type="button"
+    >
+      Withdraw
+    </button>
+    <button
+      class="btn"
+      (click)="showDepositForm = !showDepositForm"
+      type="button"
+    >
+      Deposit
+    </button>
+    <button
+      class="btn"
+      (click)="showTransferForm = !showTransferForm"
+      type="button"
+    >
+      Transfer
+    </button>
+  </div>
+  <div class="deposit float-form" *ngIf="showDepositForm">
+    <app-deposit></app-deposit>
+  </div>
+  <div class="withdraw float-form" *ngIf="showWithdrawForm">
+    <app-withdrawl></app-withdrawl>
+  </div>
+  <div class="transfer float-form" *ngIf="showTransferForm">
+    <app-transfer></app-transfer>
+  </div>
+</body>
+

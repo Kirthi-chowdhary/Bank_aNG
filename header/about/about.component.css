@@ -1,0 +1,13 @@
+body {
+  height: 480pt;
+  background: linear-gradient(
+      135deg,
+      rgb(167, 223, 255) 50%,
+      rgb(224, 167, 250)
+    );
+    margin-top: -0.42cm;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding-top: 1cm;
+}

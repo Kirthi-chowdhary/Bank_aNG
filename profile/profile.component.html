@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<body>
+  <div class="profile">
+    <div class="profile__header">
+      <div class="profile__avatar">
+        <img
+          src="https://w0.peakpx.com/wallpaper/29/397/HD-wallpaper-naruto-anime-bijuu-kurama-kyuubi-manga-shippuuden.jpg"
+          alt="Profile Avatar"
+        />
+      </div>
+      <div class="profile__info">
+        <h1 class="profile__name">{{user.firstName}}  {{user.middleName}}  {{user.lastName}}</h1>
+        <p class="profile__location">India, {{user.address}}</p>
+      </div>
+    </div>
+
+    <div class="profile__section">
+      <h2 class="profile__section-title">About</h2>
+      <div class="profile__section-content">
+    
+        <p>
+          <span class="profile__label">Phone Number: </span>
+          <span class="profile__value">{{user.phone}}</span>
+        </p>
+        <p>
+          <span class="profile__label">Email: </span>
+          <span class="profile__value">{{user.email}}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="profile__section">
+      <h2 class="profile__section-title">Bank Details</h2>
+      <div class="profile__section-content">
+        <p>
+          <span class="profile__label">Bank Name:</span>
+          <span class="profile__value">DEXIA Bank</span>
+        </p>
+        <p>
+          <span class="profile__label">Account Number:</span>
+          <span class="profile__value">{{user.account}}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="profile__section">
+      <h2 class="profile__section-title">Cards</h2>
+      <div class="profile__section-content">
+        <ul class="profile__value-list">
+          <li class="profile__value-list-item" *ngFor="let card of currentUserards">{{ card.Card_Number}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
